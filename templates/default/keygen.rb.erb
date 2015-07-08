@@ -1,0 +1,29 @@
+#!/opt/chef/embedded/bin/ruby
+#########################################
+
+require 'ruby_expect'
+fileloc = '<%= @fileloc %>'
+
+
+exp = RubyExpect::Expect.spawn('ssh-keygen', :debug => true)
+exp.timeout = 50
+exp.procedure do
+   each do
+    expect "Generating public/private rsa key pair."
+    expect "Enter file in which to save the key" do
+		send fileloc
+	end
+	expect "Enter passphrase" do
+		send ""
+	end
+	expect "Enter same passphrase again" do
+		send ""
+	end
+	expect "Your identification has been saved in"
+	expect "Your public key has been saved in"
+	expect "The key fingerprint is:"
+	expect "The key's randomart image is:"
+	expect "+--[ RSA 2048]----+"
+	expect "+---------------"
+   end
+end

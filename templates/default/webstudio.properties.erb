@@ -1,0 +1,63 @@
+# The host name of this Web Studio
+com.endeca.webstudio.hostname=<%= @hostname %>
+
+# This must be set to a non-SSL port, even if you are using the SSL version of Web Studio
+com.endeca.webstudio.port=<%= @workbench_port %>
+
+# An optional setting allowing you to define what URL to use to construct the preview app settings
+# Example:
+
+# The EAC Central server that this Web Studio uses
+com.endeca.webstudio.eac.hostname=<%= @hostname %>
+com.endeca.webstudio.eac.port=<%= @eac_port %>
+com.endeca.webstudio.eac.useHttps=false
+
+# Hides the dropdown for selecting an application
+# on the base login page.
+com.endeca.webstudio.hide.login.application.dropdown=false
+
+# Controls whether the EAC Admin Console will allow changing EAC provisioning
+com.endeca.webstudio.allow.eac.provisioning=true
+
+# The SSL settings for connecting to an SSL-enabled EAC
+# Configure your key store and trust store information here. 
+#javax.net.ssl.trustStore=/opt/endeca6/Workbench/workspace/conf/ca.ks
+#javax.net.ssl.trustStoreType=JKS
+#javax.net.ssl.trustStorePassword=eacpass
+#javax.net.ssl.keyStore=/opt/endeca6/Workbench/workspace/conf/eac.ks
+#javax.net.ssl.keyStoreType=JKS
+#javax.net.ssl.keyStorePassword=eacpass
+
+# Localization
+com.endeca.webstudio.locale=en_US_merch
+
+# LDAP Authentication
+com.endeca.webstudio.useLdap=false
+
+# URL encoding for workflow emails
+# Setting this to false means Web Studio mailto URLs are encoded via JavaScript's escape 
+# function (usually ISO-8859-1)
+# Setting it to true encodes mailto URLs in UTF-8
+#
+# Set this to false if you are using a non UTF-8 compatible email client such as Outlook 2003
+com.endeca.webstudio.useUTF8InMailToUrls=false
+
+# The maximum number of page links to display in the Rule Manager rule list
+com.endeca.webstudio.numPageLinks=11
+
+# The default number of rules to display per page in the Rule Manager rule list
+com.endeca.webstudio.defaultRulesPerPage=20
+
+# The choices to supply for the number of rules to display per page in the Rule Manager rule list.
+# Any value which cannot be parsed as an integer (such as "All") will show all of the rules.
+com.endeca.webstudio.rulesPerPageChoices=20,50,100,All
+
+# The URL from which to load editor configuration for Page Builder
+# com.endeca.webstudio.pagebuilder.editors.config=http://my.server.com/some/location/myconfiguration.xml
+
+# The URL from which to load the crossdomain.xml policy file (necessary
+# when the above file is on a server that is distinct from the PageBuilder server)
+# com.endeca.webstudio.pagebuilder.editors.crossdomain=http://my.server.com/some/location/crossdomain.xml
+
+# Added 10-22-10 | Eventum ticket #70371
+com.endeca.webstudio.pagebuilder.editors.config=http://<%=node[:fqdn]%>:<%=node['schl_endeca']['workbench']['http_port']%>/pbx/etc/pbconfig.xml

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+//
+//  Copyright (C) 2010 Endeca Technologies, Inc.
+//
+// The use of the source code in this file is subject to the ENDECA
+// TECHNOLOGIES, INC. SOFTWARE TOOLS LICENSE AGREEMENT. The full text of the
+// license agreement can be found in the ENDECA INFORMATION ACCESS PLATFORM
+// THIRD-PARTY SOFTWARE USAGE AND LICENSES document included with this software
+// distribution.
+//
+-->
+
+
+
+<EditorConfig xmlns="http://endeca.com/schema/editor-config/2010" >
+    <GlobalEditorConfig>
+        <pbxUrl>http://<%=node[:fqdn]%>:<%=node['schl_endeca']['workbench']['http_port'] %>/pbx</pbxUrl>
+    </GlobalEditorConfig>
+
+    <EditorModule url="http://<%=node[:fqdn]%>:<%= node['schl_endeca']['workbench']['http_port'] %>/pbx/modules/editors.swf">
+        <Editor name="editors:BooleanEditor">
+
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:ChoiceEditor">
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:ColorEditor">
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:DebugEditor">
+
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:DynamicSlotEditor">
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:ImageEditor">
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:LinkEditor">
+
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:RecordListEditor">
+            <EditorConfig>
+                <RecordsPerPageOptions>
+                    <RecordsPerPage>10</RecordsPerPage>
+                    <RecordsPerPage>25</RecordsPerPage>
+                    <RecordsPerPage>50</RecordsPerPage>
+
+                </RecordsPerPageOptions>
+            </EditorConfig>
+        </Editor>
+        <Editor name="editors:RichTextEditor">
+            <EditorConfig/>
+        </Editor>
+        <Editor name="editors:StringEditor">
+            <EditorConfig/>
+        </Editor>
+
+        <Editor name="editors:XmlEditor">
+            <EditorConfig/>
+        </Editor>
+    </EditorModule>
+</EditorConfig>
+

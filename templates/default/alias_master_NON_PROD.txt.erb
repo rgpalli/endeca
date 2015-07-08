@@ -1,0 +1,12 @@
+## Set the environment variables required by Endeca
+source <%= @base_dir %>/endeca/MDEX/<%= @mdex_ver %>/mdex_setup_sh.ini
+source <%= @base_dir %>/endeca/PlatformServices/workspace/setup/installer_sh.ini
+source <%= @base_dir %>/endeca/PlatformServices/<%= @platform_services_ver %>/setup/installer_sh.ini
+source <%= @base_dir %>/endeca/Workbench/workspace/setup/installer_sh.ini
+source <%= @base_dir %>/endeca/Workbench/<%= @workbench_ver %>/setup/installer_sh.ini
+alias startWorkbench='source <%= @base_dir %>/endeca/Workbench/workspace/setup/installer_sh.ini; <%= @base_dir %>/endeca/Workbench/<%= @workbench_ver %>/server/bin/startup.sh'
+alias stopWorkbench='source <%= @base_dir %>/endeca/Workbench/workspace/setup/installer_sh.ini; <%= @base_dir %>/endeca/Workbench/<%= @workbench_ver %>/server/bin/shutdown.sh'
+alias checkEndeca='printf "\n$(ps -ef | grep endeca6 | egrep -v "grep|su -|-ef|bash|sshd|avahi|endeca_run|start_eac")\n\n"'
+alias eac='<%= @base_dir %>/endeca/PlatformServices/<%= @platform_services_ver %>/bin/eaccmd.sh'
+alias startEAC='source <%= @base_dir %>/endeca/PlatformServices/workspace/setup/installer_sh.ini; <%= @base_dir %>/endeca/PlatformServices/<%= @platform_services_ver %>/tools/server/bin/startup.sh'
+alias stopEAC='source <%= @base_dir %>/endeca/PlatformServices/workspace/setup/installer_sh.ini; <%= @base_dir %>/endeca/PlatformServices/<%= @platform_services_ver %>/tools/server/bin/shutdown.sh'
